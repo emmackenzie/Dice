@@ -1,7 +1,5 @@
 int myX;
 int myY;
-int dots;
-Die bob;
 int numDots;
 
 void setup()
@@ -12,10 +10,18 @@ void setup()
 }
 
 void draw()
-{
-	bob = new Die(200,200);
-	bob.show();
+{	
+	for(int y = 50; y < 350; y = y +60)
+	{
+		for(int x = 25; x < 375; x = x + 60)
+		{
+			Die bob = new Die(x,y);
+			bob.show();
+		}
+	}
+	//text("there are " + numDots + " dots", 100,370, 40);
 }
+
 
 void mousePressed()
 {
@@ -39,16 +45,55 @@ class Die //models one single dice cube
 
 	void show()
 	{
-		fill(255,0,0);
-		rect(myX,myY,30,30);
+		fill(255);
+		rect(myX,myY,50,50, 5);
 
 		numDots = (int)(Math.random()*6) +1;
-		println(numDots);
 
 		fill(0);
 		if (numDots == 1)
-			{
-			ellipse(myX+15,myY+15,10,10);
-			}
+		{
+			ellipse(myX+25,myY+25,10,10);
+		}
+
+		if (numDots == 2)
+		{
+			ellipse(myX +10, myY+10,10,10);
+			ellipse(myX+40, myY +40,10,10);
+		}
+
+		if (numDots == 3)
+		{
+			ellipse(myX +10, myY+10,10,10);
+			ellipse(myX + 25, myY+25,10,10);
+			ellipse(myX+40, myY +40,10,10);
+		}
+
+		if (numDots == 4)
+		{
+			ellipse(myX +10, myY+10,10,10);
+			ellipse(myX + 40, myY+10,10,10);
+			ellipse(myX + 10, myY+40,10,10);
+			ellipse(myX+40, myY +40,10,10);
+		}
+
+		if (numDots == 5)
+		{
+			ellipse(myX +10, myY+10,10,10);
+			ellipse(myX + 40, myY+10,10,10);
+			ellipse(myX + 10, myY+40,10,10);
+			ellipse(myX+40, myY +40,10,10);
+			ellipse(myX+25,myY+25,10,10);
+		}
+
+		if (numDots == 6)
+		{
+			ellipse(myX +10, myY+10,10,10);
+			ellipse(myX +10, myY+25,10,10);
+			ellipse(myX + 10, myY+40,10,10);
+			ellipse(myX + 40, myY+10,10,10);
+			ellipse(myX + 40, myY+25,10,10);
+			ellipse(myX+40, myY +40,10,10);
+		}
 	}
 }
