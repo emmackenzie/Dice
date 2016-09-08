@@ -11,6 +11,8 @@ void setup()
 
 void draw()
 {	
+	int sum = 0;
+
 	for(int y = 50; y < 350; y = y +60)
 	{
 		for(int x = 25; x < 375; x = x + 60)
@@ -19,7 +21,7 @@ void draw()
 			bob.show();
 		}
 	}
-	//text("there are " + numDots + " dots", 100,370, 40);
+	text("there are " + sum + " dots", 100,370, 100);
 }
 
 
@@ -36,20 +38,20 @@ class Die //models one single dice cube
 		//variable initializations here
 		myX = x;
 		myY = y;
+		numDots = (int)(Math.random()*6) +1;
 	}
 
 	void roll()
 	{
-		//your code here
+
 	}
 
 	void show()
 	{
-		fill(255);
-		rect(myX,myY,50,50, 5);
 
-		numDots = (int)(Math.random()*6) +1;
-
+		fill((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
+		rect(myX,myY,50,50, 10);
+		
 		fill(0);
 		if (numDots == 1)
 		{
@@ -95,5 +97,6 @@ class Die //models one single dice cube
 			ellipse(myX + 40, myY+25,10,10);
 			ellipse(myX+40, myY +40,10,10);
 		}
+
 	}
 }
