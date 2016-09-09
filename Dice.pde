@@ -19,6 +19,7 @@ void draw()
 		{
 			Die bob = new Die(x,y);
 			bob.show();
+			bob.roll();
 		}
 	}
 	text("there are " + sum + " dots", 100,370, 100);
@@ -43,15 +44,6 @@ class Die //models one single dice cube
 
 	void roll()
 	{
-
-	}
-
-	void show()
-	{
-
-		fill((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
-		rect(myX,myY,50,50, 10);
-		
 		fill(0);
 		if (numDots == 1)
 		{
@@ -97,6 +89,15 @@ class Die //models one single dice cube
 			ellipse(myX + 40, myY+25,10,10);
 			ellipse(myX+40, myY +40,10,10);
 		}
+	}
+
+	void show()
+	{
+
+		fill((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
+		rect(myX,myY,50,50, 10);
+		
+		
 
 	}
 }
