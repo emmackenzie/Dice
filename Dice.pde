@@ -1,6 +1,4 @@
-int myX;
-int myY;
-int numDots;
+
 
 void setup()
 {
@@ -11,6 +9,9 @@ void setup()
 
 void draw()
 {	
+
+	background(255);
+
 	int sum = 0;
 
 	for(int y = 50; y < 350; y = y +60)
@@ -20,8 +21,12 @@ void draw()
 			Die bob = new Die(x,y);
 			bob.show();
 			bob.roll();
+			sum = sum + bob.numDots;
+			
 		}
 	}
+	//Font myFont = new Font("Serif", Font.ITALIC | Font.BOLD, 12);
+    //Font newFont = myFont.deriveFont(50F);
 	text("there are " + sum + " dots", 100,370, 100);
 }
 
@@ -34,6 +39,10 @@ void mousePressed()
 class Die //models one single dice cube
 {
 	//variable declarations here
+	int myX;
+	int myY;
+	int numDots;
+
 	Die(int x, int y) //constructor
 	{
 		//variable initializations here
@@ -65,6 +74,13 @@ class Die //models one single dice cube
 
 		if (numDots == 4)
 		{
+			/*for (int y = myY + 10; y < 45; y = y ++){
+				for (int x = myX +10; x < myX + 45; x ++){
+					fill(0);
+					ellipse(x, y, 10,10);
+				}
+			}*/
+		
 			ellipse(myX +10, myY+10,10,10);
 			ellipse(myX + 40, myY+10,10,10);
 			ellipse(myX + 10, myY+40,10,10);
