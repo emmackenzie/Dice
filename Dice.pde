@@ -2,7 +2,7 @@
 
 void setup()
 {
-	size(400,400);
+	size(500,500);
 	noLoop();
 
 }
@@ -14,9 +14,9 @@ void draw()
 
 	int sum = 0;
 
-	for(int y = 50; y < 350; y = y +60)
+	for(int y = 40; y < 450; y = y +60)
 	{
-		for(int x = 25; x < 375; x = x + 60)
+		for(int x = 15; x < 475; x = x + 60)
 		{
 			Die bob = new Die(x,y);
 			bob.show();
@@ -25,9 +25,9 @@ void draw()
 			
 		}
 	}
-	//Font myFont = new Font("Serif", Font.ITALIC | Font.BOLD, 12);
-    //Font newFont = myFont.deriveFont(50F);
-	text("there are " + sum + " dots", 100,370, 100);
+	
+	text("there are " + sum + " dots", 100, 470);
+	
 }
 
 
