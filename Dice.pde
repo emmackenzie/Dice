@@ -14,7 +14,7 @@ void draw()
 
 	int sum = 0;
 
-	for(int y = 40; y < 450; y = y +60)
+	for(int y = 30; y < 450; y = y +60)
 	{
 		for(int x = 15; x < 475; x = x + 60)
 		{
@@ -26,7 +26,8 @@ void draw()
 		}
 	}
 	
-	text("there are " + sum + " dots", 100, 470);
+	textSize(50);
+	text("there are " + sum + " dots", 30, 485);
 	
 }
 
